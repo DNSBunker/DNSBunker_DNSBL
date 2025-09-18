@@ -1,3 +1,5 @@
-Stuff which need to be blocked.
+Stuff which I found that need to be blocked...
 
-You must not use these lists as they are feed into Hagezi Lists already!
+> [!CAUTION]
+> You must not use these lists if you use any Hagezi List!
+> My DNSBLs are included in Hagezis designated Lists!
