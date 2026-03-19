@@ -77,3 +77,4 @@ günstig-heizen.de # fakenews ad
 gewinnmobil.online # fake gewinnspiel
 femme-divine.de # clickbait / ai slop ad
 sportnebe.de # clickbait / scare ad
+jl110polizei.online
