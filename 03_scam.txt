@@ -71,3 +71,4 @@ rebind.network
 bestehausfrau.com
 deutsche-ki-app.com
 gesundinsel.com # clickbait / scare ad
+viralreporter.de # clickbait / scare ad
