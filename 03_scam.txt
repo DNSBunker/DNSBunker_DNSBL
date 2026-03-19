@@ -75,3 +75,4 @@ viralreporter.net # clickbait / scare ad
 pflege.net # clickbait / scare ad
 günstig-heizen.de # fakenews ad
 gewinnmobil.online # fake gewinnspiel
+femme-divine.de # clickbait / ai slop ad
