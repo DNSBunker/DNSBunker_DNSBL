@@ -74,3 +74,4 @@ gesundinsel.com # clickbait / scare ad
 viralreporter.net # clickbait / scare ad
 pflege.net # clickbait / scare ad
 günstig-heizen.de # fakenews ad
+gewinnmobil.online # fake gewinnspiel
