@@ -78,3 +78,4 @@ gewinnmobil.online # fake gewinnspiel
 femme-divine.de # clickbait / ai slop ad
 sportnebe.de # clickbait / scare ad
 jl110polizei.online
+fiktok.com
