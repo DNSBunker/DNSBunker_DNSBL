@@ -1028,3 +1028,5 @@ kfap.xyz
 kfaijgeayaianefhiafuawuaf-60797.portmap.host
 78796.vip
 ukankingwithea.com # fake captcha delivered by click hijack script
+parkspringshotel.com # jdownloader compromize
+auraguest.lk # jdownloader compromize
