@@ -1030,3 +1030,6 @@ kfaijgeayaianefhiafuawuaf-60797.portmap.host
 ukankingwithea.com # fake captcha delivered by click hijack script
 parkspringshotel.com # jdownloader compromize
 auraguest.lk # jdownloader compromize
+trustprotocol.online # router c2
+amedspor.com.tr # router c2
+metawinviptransfer.com # router c2
