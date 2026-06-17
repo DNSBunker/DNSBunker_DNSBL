@@ -1,14 +1,13 @@
-dybgh.com
-zqzbsl.mobi
-ctx0c.mobi
-rbxboost.gg
-giftcardsdaily.com
-money.dailyhunt.in
 247destockwinner.info
-quickcashpanels.info
-cover-review-quality-mkg1-281l-vjn9.pages.dev
-38046.com
 25203.cc
-galabetgir3.vip
-d3c4w812zqrvlw.cloudfront.net # various phishing frontends
-hitboxgames.co # social engineering; phishing mail to hijack google account
+38046.com
+cover-review-quality-mkg1-281l-vjn9.pages.dev
+ctx0c.mobi
+d3c4w812zqrvlw.cloudfront.net
+dybgh.com
+giftcardsdaily.com
+hitboxgames.co
+money.dailyhunt.in
+quickcashpanels.info
+rbxboost.gg
+zqzbsl.mobi
