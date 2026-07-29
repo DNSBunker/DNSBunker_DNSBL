@@ -1,0 +1,144 @@
+#!/bin/bash
+set -euo pipefail
+
+declare -A SOURCES=(
+  ["hagezi-pro"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/rpz/pro.txt"
+  ["hagezi-tif"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/rpz/tif-1.txt https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/rpz/tif-2.txt"
+)
+
+RPZ_DIR="/etc/powerdns/rpz"
+STATE_DIR="/var/lib/dnsbunker/rpz-state"   # ETag + Rohdaten-Cache, ein Paar pro Einzel-URL
+
+mkdir -p "$STATE_DIR"
+
+reload_needed=false
+
+# Lädt eine einzelne URL conditional per ETag (If-None-Match).
+# Rückgabe: 0 = geändert (neu heruntergeladen), 1 = unverändert (304), 2 = Fehler
+fetch_url() {
+  local url="$1" etag_file="$2" raw_cache="$3" part="$4"
+  local etag_tmp
+  etag_tmp="$(mktemp)"
+
+  # Inkonsistenten Zustand reparieren: ETag vorhanden, aber kein Rohdaten-Cache mehr da
+  # -> conditional Request würde fälschlich 304 liefern, ohne dass wir den Inhalt hätten
+  if [ -s "$etag_file" ] && [ ! -s "$raw_cache" ]; then
+    echo "  [warn] Cache fehlt für $url, erzwinge Neu-Download" >&2
+    : > "$etag_file"
+  fi
+  touch "$etag_file"
+
+  local http_code="" curl_exit=0
+  http_code=$(curl -sSL \
+    --etag-compare "$etag_file" \
+    --etag-save "$etag_tmp" \
+    -o "$part" \
+    -w '%{http_code}' \
+    "$url") || curl_exit=$?
+
+  if [ "$curl_exit" -ne 0 ]; then
+    echo "  [error] curl fehlgeschlagen (exit $curl_exit) für $url" >&2
+    rm -f "$etag_tmp"
+    return 2
+  fi
+
+  case "$http_code" in
+    200)
+      if [ -s "$etag_tmp" ]; then
+        mv "$etag_tmp" "$etag_file"
+      else
+        rm -f "$etag_tmp"
+        : > "$etag_file"
+      fi
+      cp "$part" "$raw_cache"
+      echo "  [changed]   $url"
+      return 0
+      ;;
+    304)
+      rm -f "$etag_tmp"
+      cp "$raw_cache" "$part"
+      echo "  [unchanged] $url"
+      return 1
+      ;;
+    *)
+      echo "  [error] HTTP $http_code für $url" >&2
+      rm -f "$etag_tmp"
+      return 2
+      ;;
+  esac
+}
+
+for name in "${!SOURCES[@]}"; do
+  echo "== $name =="
+  tmp="$(mktemp)"
+  first=true
+  any_changed=false
+  any_error=false
+
+  for url in ${SOURCES[$name]}; do
+    url_hash="$(printf '%s' "$url" | sha256sum | cut -c1-16)"
+    etag_file="${STATE_DIR}/${name}-${url_hash}.etag"
+    raw_cache="${STATE_DIR}/${name}-${url_hash}.raw"
+    part="$(mktemp)"
+
+    rc=0
+    fetch_url "$url" "$etag_file" "$raw_cache" "$part" || rc=$?
+
+    case "$rc" in
+      0) any_changed=true ;;
+      2) any_error=true ;;
+    esac
+
+    if $first; then
+      cat "$part" > "$tmp"
+      first=false
+    else
+      # zweiten SOA/Header entfernen, nur RPZ-Records übernehmen
+      awk '
+        BEGIN { started=0 }
+        /^[^;].*[[:space:]]IN[[:space:]]/ { started=1 }
+        started { print }
+      ' "$part" >> "$tmp"
+    fi
+
+    rm -f "$part"
+  done
+
+  if $any_error; then
+    echo "[$name] Fehler beim Abruf einer Teil-Liste, überspringe" >&2
+    rm -f "$tmp"
+    continue
+  fi
+
+  if ! $any_changed; then
+    echo "[$name] keine Änderung (ETag identisch für alle Teil-Listen)"
+    rm -f "$tmp"
+    continue
+  fi
+
+  if ! head -n 20 "$tmp" | grep -q "SOA"; then
+    echo "[$name] Kein SOA-Record gefunden, breche ab" >&2
+    rm -f "$tmp"
+    continue
+  fi
+
+  size=$(stat -c%s "$tmp")
+  if [ "$size" -lt 100000 ]; then
+    echo "[$name] Datei verdächtig klein ($size bytes), breche ab" >&2
+    rm -f "$tmp"
+    continue
+  fi
+
+  mv "$tmp" "${RPZ_DIR}/${name}.rpz"
+  echo "[$name] aktualisiert"
+  reload_needed=true
+done
+
+chown -R pdns:pdns "$RPZ_DIR"
+
+if $reload_needed; then
+  rec_control --timeout=60 reload-lua-config
+  echo "Lua-Config neu geladen (mind. eine RPZ-Datei aktualisiert)"
+else
+  echo "Keine RPZ-Änderungen, PowerDNS Recursor nicht neu geladen"
+fi
