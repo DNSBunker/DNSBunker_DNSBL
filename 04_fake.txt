@@ -9,7 +9,6 @@ agriandindusupply.com
 aicheleholzgmbh.de
 air-uposterreich.at
 air-uposterreich.com
-airsguns.com
 airyano.com
 alfakherstore.de
 alfiag.cfd
@@ -17,10 +16,10 @@ amsterdamout.store
 anhaenger-geraete.com
 anuraclo.com
 aphroditecards.com
+apollogrouptvs.com
 appleofedenshoes.shop
 aquascapers-galerie.com
 armedangelsoutlet.com
-arms-mall.com
 arnstadter-einkauf.de
 at.irgedvei.shop
 auraterraplaza.com
@@ -35,7 +34,6 @@ babyausstattung-de.com
 babylissde.de
 babymodepur.com
 back-dani.shop
-baer--schuhe.com
 baristadiscount.com
 barzubehoerhaus.com
 bauhobby.com
@@ -49,7 +47,6 @@ bestemedikamente.com
 bestsoluvs.click
 bicyclegodshop.com
 bicycleseatpostde.com
-bike-components-de.com
 bikeproshops.com
 bikeskraft.de
 billiggarten.com
@@ -61,10 +58,7 @@ box4container.com
 boxx-container.de
 bozzer.de
 brehn.de
-brokereins.com
-brysha.store
 bunterstil.com
-bvsprobtp.com
 byredowien.com
 calmdetox-shop.com
 campingzubehorhub.com
@@ -82,7 +76,6 @@ coastalresin.store
 columbiasale.de
 comercialandrea.cl
 comme-des-garcons.co.at
-computerpartsglobal.com
 conteneursducoin.com
 controllerkunst.com
 craftoliq.com
@@ -109,7 +102,6 @@ dewello-shop.de
 diag-wagen.de
 diana-apotheke.com
 diesel-outlet.de
-diezeitmitmedien.com
 diybuildsupplies.com
 dly-home.com
 draussenmenschen.de
@@ -138,19 +130,15 @@ fakeshop.at
 familienzug.ch
 fastenergy24.com
 fc-moto-vip.com
-felgenwelt.com
 fermil.shop
 ferntrailcollective.com
 feronilva.com
-ferplasthaustierbedarf.com
 finalatransports.com
-fitgirl-repacks.download
 flixyshop.com
 foluna.fr
 formeri.shop
 frankfurteintrachtshop.com
 freedomhats.shop
-freiheitcamping.com
 fritz-container-gmbh.de
 fwertty.shop
 fxrikg.shop
@@ -183,7 +171,6 @@ hausdampf.com
 hausofvedashop.com
 haustirwelten.de
 healththrivewith.com
-heizdirekt.de
 heizelo.de
 heizera.com
 heizex.de
@@ -292,19 +279,15 @@ mobelonlineshop24.com
 mobilixpro.com
 moebel-onlineshop.com
 moebelcenterremscheid.de
-moebelpunkt.com
 moebelundgarten.com
 montblancsale.de
 motelmio.shop
 moto-discounts-germany.com
 motorrad-ausstattung.com
 motorradoutfit.com
-motorradteileonline.com
 mto-service.com
 muersi.com
-musikinstrumente-profi.com
 musikprofi.com
-musikstudiobox.com
 musiqueonline.com
 myelektrocenter.com
 mygarminstraps.de
@@ -312,13 +295,11 @@ myspirituosen.com
 nachhaltigewohndeko.com
 naturacare360.com
 naturelabs.store
-naturvitalia.com
 nautikbedarf.com
 nestleovae.com
 nexoil.de
 nizle.shop
 nloia.shop
-notenglanz.com
 nurioso.com
 obstbaumrabatt.com
 oelbonus.de
@@ -382,7 +363,6 @@ sanitaerbox.com
 sante360plus.com
 sarlcresmar.com
 savetheduckde.com
-schaltwerkfahrrad.de
 scimonge.com
 senkkopfschraube.com
 sereneify.com
@@ -393,7 +373,6 @@ singlespeedde.com
 skina.nu
 slimvitax.com
 slowburner.de
-smartcookgear.com
 smtoygalaxy.com
 snksinc.de
 snowhow.shop
@@ -404,8 +383,6 @@ solarmik.de
 soltect.de
 spezialwerkzeug-profi.com
 spielwaren-tonies.com
-spikonig.de
-starkwerkzeug.de
 stelonira.com
 steyrtracteursgmbh.at
 stoicdraussen.com
@@ -470,7 +447,6 @@ werke-anhangers.com
 werkzeug-und-maschinen.com
 werkzeugdiscount.com
 werkzeugemaschinen.com
-wfh-markt.de
 wildblumenparadies.de
 wildcatchco.com
 wildlingschuhede.com
@@ -483,9 +459,7 @@ woodelivo.com
 xxxlutz-eu.shop
 xxxxlutz.shop
 yinga-vital.de
-yooofa.com
 yournaturalathlettrading.shop
 zaubergartenpro.com
 zenniagoods.com
 zova.at
-apollogrouptvs.com # impersonating apollogroup.tv
