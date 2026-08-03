@@ -11,3 +11,4 @@ money.dailyhunt.in
 quickcashpanels.info
 rbxboost.gg
 bildverarbeitunguk.com # cdn specifically for various phishing and fake shops
+ssl-images-may.com # cdn for phish and fake shops
