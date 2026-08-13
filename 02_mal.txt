@@ -696,3 +696,4 @@ zombiesperminute.com
 zutnsw-tdgiiu-mdifr.work
 zzkls.com
 attirenepal.com # compromised with cobaldstrike
+maldivehost.net # cobaldstrike c2
