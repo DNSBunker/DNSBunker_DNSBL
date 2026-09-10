@@ -699,3 +699,4 @@ attirenepal.com # compromised with cobaldstrike
 maldivehost.net # cobaldstrike c2
 twitchlift.com
 iltizam.ekuinas.com.my # clickfix
+internetserchinkas.co # clickfix c2
